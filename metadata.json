@@ -1,0 +1,21 @@
+{
+  "name": "77agency-god",
+  "version": "0.1.0",
+  "author": "77agency",
+  "summary": "Puppet module for God",
+  "license": "Apache 2.0",
+  "source": "https://github.com/77Agency/god-puppet",
+  "project_page": "https://github.com/77Agency/god-puppet",
+  "issues_url": "https://github.com/77Agency/god-puppet/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_range": ">= 1.0.0"
+    },
+    {
+      "name": "maestrodev/rvm",
+      "version_range": ">= 1.0.0"
+    }
+  ]
+}
+
