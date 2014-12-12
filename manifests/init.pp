@@ -79,4 +79,10 @@ class god ($state = 'present', $ruby = 'ruby-2.0.0-p451', $version = 'latest', $
       ensure      => $state,
       require => Rvm_gemset["$ruby_version"];
   }
+  service {"god":
+    name => "god",
+    ensure => "running",
+    enable => true,
+    hasrestart => true
+  }
 }
