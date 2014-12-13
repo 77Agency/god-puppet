@@ -1,4 +1,4 @@
-efine god::process ($name,$pidfile,$start_command, $stop_command, $restart_command) {
+define god::process ($name,$pidfile,$start_command, $stop_command, $restart_command) {
   file { "god-$name": 
     path => "/etc/god/$name.god",
     content => template("god/sample.god.erb"),

@@ -1,5 +1,5 @@
 God.watch do |w|
-  w.name = "<%= @process %>"
+  w.name = "<%= @name %>"
   <% if @start_command %>
     w.start = "<%= @start_command %>"
   <% end %>
@@ -9,6 +9,6 @@ God.watch do |w|
   <% if @restart_command %>
     w.restart = "<%= @restart_command %>"
   <% end %>
-  w.pid_file = "<% @pidfile %>"
+  w.pid_file = "<%= @pidfile %>"
   w.keepalive
 end
