@@ -9,6 +9,8 @@ God.watch do |w|
   <% if @restart_command %>
     w.restart = "<%= @restart_command %>"
   <% end %>
-  w.pid_file = "<%= @pidfile %>"
+  <% if @pidfile %>
+    w.pid_file = "<%= @pidfile %>"
+  <% end %>
   w.keepalive
 end
