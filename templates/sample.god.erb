@@ -19,5 +19,12 @@ God.watch do |w|
     start.condition(:process_exits)
   end
   <% end %>
+  <% if @gid %>
+    w.gid = <%= @gid %>
+  <% end %>
+  <% if @uid %>
+    w.uid = <%= @uid %>
+  <% end %>
+
   w.keepalive
 end
