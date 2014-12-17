@@ -44,7 +44,7 @@ class god ($state = 'present', $ruby = 'ruby-2.0.0-p451', $version = 'latest', $
   file {"god-config": 
     path => "/etc/god/god.conf",
     require => File["god-dir"],
-    content => "God.load \"/etc/god/conf.d/*.god\""
+    content => "God.load \"/etc/god/conf.d/*.god\"\n"
   }
 
   file {"god-init-script": 
