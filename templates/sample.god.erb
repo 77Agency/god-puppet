@@ -15,10 +15,10 @@ God.watch do |w|
   w.pid_file = "<%= @pidfile %>"
   <% end %>
   <% if @gid %>
-    w.gid = <%= @gid %>
+    w.gid = "<%= @gid %>"
   <% end %>
   <% if @uid %>
-    w.uid = <%= @uid %>
+    w.uid = "<%= @uid %>"
   <% end %>
 
   # determine the state on startup
