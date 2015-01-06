@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# chkconfig: 2345 95 20
+# chkconfig: 35 95 20
 # description: God process monitor init script
 # Keeps processes running
 # processname: god
@@ -21,6 +21,7 @@ CONFIG_FILE="/etc/god/god.conf"
 COMMAND="/${RVM_PATH}/wrappers/${RUBY_VERSION}/god"
 
 CMD="${COMMAND} -c ${CONFIG_FILE}  -P ${PID_FILE} -l ${LOG_FILE} --log-level debug"
+STOP_CMD="${COMMAND} quit"
 
 
 RETVAL=0
@@ -34,13 +35,13 @@ case "$1" in
     ;;
   stop)
     echo -n "Stopping $DESC: "
-    kill `cat ${PID_FILE}`
+    $STOP_CMD
     RETVAL=$?
     echo "$NAME."
     ;;
   restart)
     echo -n "Restarting $DESC: "
-    kill `cat ${PID_FILE}`
+    $STOP_CMD
     $CMD
     RETVAL=$?
     echo "$NAME."
