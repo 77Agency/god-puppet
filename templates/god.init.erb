@@ -1,12 +1,14 @@
-#!/bin/sh
+#!/bin/bash
 
-# chkconfig: 35 95 20
-# description: God process monitor init script
-# Keeps processes running
+# god - Startup script for mongod
+
+# chkconfig: 35 80 10
+# description: God process monitor.
 # processname: god
+# config: /etc/god.conf
+# pidfile: /var/run/god.pid
 
-# Author: Jon Kinney
-# Based on the opensuse skeleton /etc/init.d/skeleton init script
+. /etc/rc.d/init.d/functions
 
 NAME=god
 DESC=god
