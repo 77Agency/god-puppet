@@ -2,6 +2,13 @@ God.watch do |w|
   w.name = "<%= @name %>"
   w.interval = 30.seconds
 
+  <% if @raw_data && @raw_data.any? %>
+    <% @raw_data.each do |d| %>
+      <%= d %>
+    <% end %>
+  <% end %>
+
+
   <% if @start_command %>
   w.start = "<%= @start_command %>"
   <% end %>
@@ -11,6 +18,7 @@ God.watch do |w|
   <% if @restart_command %>
   w.restart = "<%= @restart_command %>"
   <% end %>
+
   <% if @pidfile %>
   w.pid_file = "<%= @pidfile %>"
   <% end %>
