@@ -81,7 +81,6 @@ class god ($state = 'present', $ruby = 'ruby-2.0.0-p451', $version = 'latest', $
   }
   service {"god":
     name => "god",
-    provider => "redhat",
     ensure => "running",
     enable => true,
     hasrestart => true
